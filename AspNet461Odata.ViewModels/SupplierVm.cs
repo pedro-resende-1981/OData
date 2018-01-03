@@ -9,6 +9,6 @@ namespace AspNet461Odata.ViewModels
 
         public string Name { get; set; }
 
-        public IEnumerable<ProductVm> Products { get; set; }
+        public ICollection<ProductVm> Products { get; set; }
     }
 }

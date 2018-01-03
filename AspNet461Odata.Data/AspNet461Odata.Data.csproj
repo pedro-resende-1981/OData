@@ -91,25 +91,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201712211704186_InitialState.cs" />
-    <Compile Include="Migrations\201712211704186_InitialState.Designer.cs">
-      <DependentUpon>201712211704186_InitialState.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712232011087_Change.cs" />
-    <Compile Include="Migrations\201712232011087_Change.Designer.cs">
-      <DependentUpon>201712232011087_Change.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712232123387_Change1.cs" />
-    <Compile Include="Migrations\201712232123387_Change1.Designer.cs">
-      <DependentUpon>201712232123387_Change1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712240134096_Change2.cs" />
-    <Compile Include="Migrations\201712240134096_Change2.Designer.cs">
-      <DependentUpon>201712240134096_Change2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712240136104_Change3.cs" />
-    <Compile Include="Migrations\201712240136104_Change3.Designer.cs">
-      <DependentUpon>201712240136104_Change3.cs</DependentUpon>
+    <Compile Include="Migrations\201801031130368_InitialSetup.cs" />
+    <Compile Include="Migrations\201801031130368_InitialSetup.Designer.cs">
+      <DependentUpon>201801031130368_InitialSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Order.cs" />
@@ -136,20 +120,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712211704186_InitialState.resx">
-      <DependentUpon>201712211704186_InitialState.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712232011087_Change.resx">
-      <DependentUpon>201712232011087_Change.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712232123387_Change1.resx">
-      <DependentUpon>201712232123387_Change1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712240134096_Change2.resx">
-      <DependentUpon>201712240134096_Change2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712240136104_Change3.resx">
-      <DependentUpon>201712240136104_Change3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801031130368_InitialSetup.resx">
+      <DependentUpon>201801031130368_InitialSetup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

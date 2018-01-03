@@ -7,7 +7,6 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.OData;
-using System.Web.OData.Routing;
 
 namespace AspNet461Odata.Controllers
 {

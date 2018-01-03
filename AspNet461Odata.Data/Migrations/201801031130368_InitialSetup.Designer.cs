@@ -7,13 +7,13 @@ namespace AspNet461Odata.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Change3 : IMigrationMetadata
+    public sealed partial class InitialSetup : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Change3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialSetup));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712240136104_Change3"; }
+            get { return "201801031130368_InitialSetup"; }
         }
         
         string IMigrationMetadata.Source

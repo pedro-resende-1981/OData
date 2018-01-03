@@ -22,7 +22,7 @@ namespace AspNet461Odata.Data.Repositories
 
         public IQueryable<SupplierVm> Get()
         {
-            return _database.Suppliers.ProjectTo<SupplierVm>();
+            return _database.Suppliers.Include(s => s.Products).ProjectTo<SupplierVm>();
         }
 
         public async Task<SupplierVm> GetByIDAsync(Guid id)

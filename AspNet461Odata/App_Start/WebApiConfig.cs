@@ -5,7 +5,6 @@ using AutoMapper;
 using AspNet461Odata.Data.Models;
 using AspNet461Odata.ViewModels;
 using Microsoft.OData.Edm;
-using System.Collections.Generic;
 
 namespace AspNet461Odata
 {
@@ -33,12 +32,12 @@ namespace AspNet461Odata
                     .ForMember(dest => dest.SupplierId, opt => opt.MapFrom(product => product.Supplier.Guid))
                     .ReverseMap();
 
-                cfg.CreateMap<ProductVm, Product>()
-                    .ForMember(dest => dest.Supplier, opt => opt.UseDestinationValue());
-
                 cfg.CreateMap<Supplier, SupplierVm>()
                     .ForMember(dest => dest.Guid, opt => opt.MapFrom(supplier => supplier.Guid))
                     .ReverseMap();
+
+                cfg.CreateMap<ProductVm, Product>()
+                    .ForMember(dest => dest.Supplier, opt => opt.UseDestinationValue());
 
                 cfg.CreateMap<ProductLine, ProductLineVm>()
                     .ForMember(dest => dest.ProductId, opt => opt.MapFrom(productLine => productLine.Product.Guid))
