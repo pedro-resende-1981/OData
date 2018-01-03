@@ -1,8 +1,8 @@
-﻿using AspNet461Odata.Data.Models;
-using AspNet461Odata.Data.Repositories;
+﻿using AspNet461Odata.Data.Repositories;
 using AspNet461Odata.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -13,11 +13,16 @@ namespace AspNet461Odata.Controllers
     public class SuppliersController : ODataController
     {
 
-        private SupplierRepository _supplierRepository = new SupplierRepository(new ProductsContext());
+        private IBaseRepository<SupplierVm> _supplierRepository;
+
+        public SuppliersController(IBaseRepository<SupplierVm> supplierRepository)
+        {
+            _supplierRepository = supplierRepository;
+        }
 
         [HttpGet]
         [EnableQuery]
-        public IEnumerable<SupplierVm> Get()
+        public IQueryable<SupplierVm> Get()
         {
             return _supplierRepository.Get();
         }

@@ -61,18 +61,24 @@ namespace AspNet461Odata.Data.Repositories
                 return null;
             }
 
-            var product = await _database.Products.SingleOrDefaultAsync(p => p.Guid == key);
+            var product = _database.Products.SingleOrDefault(p => p.Guid == key);
             if(product == null)
             {
                 return null;
             }
 
             Mapper.Map(updatedProductVm, product);
+
+            if (updatedProductVm.SupplierId != product.Supplier?.Guid)
+            {
+                var supplier = updatedProductVm.SupplierId != null ? _database.Suppliers.SingleOrDefault(s => s.Guid == updatedProductVm.SupplierId) : null;
+                product.Supplier = supplier;
+            }
             _database.Products.Attach(product);
             _database.Entry(product).State = EntityState.Modified;
             _database.SaveChanges();
 
-            return updatedProductVm;
+            return await Task.FromResult(updatedProductVm);
         }
 
         public ProductVm Patch(Guid key, Delta<ProductVm> patch)

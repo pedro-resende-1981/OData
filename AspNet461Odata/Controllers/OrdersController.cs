@@ -1,5 +1,4 @@
-﻿using AspNet461Odata.Data.Models;
-using AspNet461Odata.Data.Repositories;
+﻿using AspNet461Odata.Data.Repositories;
 using AspNet461Odata.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,7 +11,12 @@ namespace AspNet461Odata.Controllers
 {
     public class OrdersController : ODataController
     {
-        private OrderRepository _orderRepository = new OrderRepository(new ProductsContext());
+        private IBaseRepository<OrderVm> _orderRepository;
+
+        public OrdersController(IBaseRepository<OrderVm> orderRepository)
+        {
+            _orderRepository = orderRepository;
+        }
 
         [HttpGet]
         [EnableQuery]
